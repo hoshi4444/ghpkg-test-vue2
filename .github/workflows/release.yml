@@ -18,6 +18,7 @@ jobs:
       - name: setup
         uses: actions/setup-node@v4
         with:
+          always-auth: true
           registry-url: https://npm.pkg.github.com
           scope: 'hoshi4444'
       - name: Install
