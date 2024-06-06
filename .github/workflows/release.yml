@@ -29,4 +29,4 @@ jobs:
       - name: publish
         run: yarn publish
         env:
-          GITHUB_PACKAGES_NPM_PUBLISH_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
