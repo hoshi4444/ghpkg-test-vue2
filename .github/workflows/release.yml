@@ -11,6 +11,7 @@ jobs:
     env:
       VERSION: v0.1.0
     permissions:
+      package: write
       contents: write
     steps:
       - name: Checkout
