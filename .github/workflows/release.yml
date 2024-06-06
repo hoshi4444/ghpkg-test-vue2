@@ -8,8 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ github.ref_name }}
+    # env:
+    #   VERSION: ${{ github.ref_name }}
     permissions:
       contents: write
     steps:
