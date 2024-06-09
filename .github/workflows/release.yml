@@ -22,8 +22,8 @@ jobs:
       packages: write
       contents: write
     steps:
-    - name: Test
-      run: echo ${{ inputs.version }}
+      - name: Test
+        run: echo ${{ inputs.version }}
     #   - name: Checkout
     #     uses: actions/checkout@v4
     #   - name: setup
