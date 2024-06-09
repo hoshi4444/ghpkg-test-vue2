@@ -1,17 +1,17 @@
 name: Publish Package
 on:
-workflow_dispatch:
-  inputs:
-    version:
-      type: choice
-      options:
-        - prepatch
-        - preminor
-        - premajor
-        - patch
-        - minor
-        - major
-      description: 'バージョンアップパターン'
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        options:
+          - prepatch
+          - preminor
+          - premajor
+          - patch
+          - minor
+          - major
+        description: 'バージョンアップパターン'
 
 jobs:
   release:
