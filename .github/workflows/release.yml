@@ -4,13 +4,21 @@ on:
     inputs:
       version:
         type: choice
-        options:
-          - prepatch
-          - preminor
-          - premajor
-          - patch
-          - minor
-          - major
+        options: [
+          prepatch,
+          preminor,
+          premajor,
+          patch,
+          minor,
+          major,
+        ]
+          # - prepatch
+          # - preminor
+          # - premajor
+          # - patch
+          # - minor
+          # - major
+        required: true
         description: 'バージョンアップパターン'
 
 jobs:
