@@ -15,15 +15,15 @@ on:
 
 jobs:
   release:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ github.ref_name }}
+    permissions:
+      packages: write
+      contents: write
+    steps:
     - name: Test
       run: echo ${{ inputs.version }}
-    # runs-on: ubuntu-latest
-    # env:
-    #   VERSION: ${{ github.ref_name }}
-    # permissions:
-    #   packages: write
-    #   contents: write
-    # steps:
     #   - name: Checkout
     #     uses: actions/checkout@v4
     #   - name: setup
