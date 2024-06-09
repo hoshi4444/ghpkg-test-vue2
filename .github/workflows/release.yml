@@ -4,14 +4,14 @@ workflow_dispatch:
   inputs:
     version:
       type: choice
-        options:
-          - prepatch
-          - preminor
-          - premajor
-          - patch
-          - minor
-          - major
-        description: 'バージョンアップパターン'
+      options:
+        - prepatch
+        - preminor
+        - premajor
+        - patch
+        - minor
+        - major
+      description: 'バージョンアップパターン'
 
 jobs:
   release:
