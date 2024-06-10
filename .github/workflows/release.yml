@@ -11,11 +11,10 @@ on:
         required: true
         description: 'バージョンアップパターン'
 
+
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ github.ref_name }}
     permissions:
       packages: write
       contents: write
@@ -30,7 +29,13 @@ jobs:
           scope: '@hoshi4444'
       - name: Version Up
         run:
-          yarn version --${{ inputs.version }}
+          yarn version ${{ inputs.version }}
+          git push origin head
+          git push --origin tags
+      - name: Create release
+        run: |
+          version="$(git describe --tags --addrev=0)"
+          gh create release "${version}" --title "${version}" --generate-token
       - name: Install
         run: yarn install
       - name: build
