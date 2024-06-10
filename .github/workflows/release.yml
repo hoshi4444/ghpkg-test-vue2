@@ -39,7 +39,7 @@ jobs:
         run: |
           yarn version ${{ inputs.version }}
           git push origin HEAD
-          git push --origin tags
+          git push origin --tags
       - name: Create release
         run: |
           version="$(git describe --tags --addrev=0)"
