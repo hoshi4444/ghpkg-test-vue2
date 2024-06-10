@@ -52,3 +52,5 @@ jobs:
         run: yarn build
       - name: publish
         run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
