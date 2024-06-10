@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - env:
+        USERNAME: github-actions[bot]
+        EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: setup
         uses: actions/setup-node@v4
         with:
@@ -30,6 +34,8 @@ jobs:
       - name: Version Up
         run: |
           yarn version ${{ inputs.version }}
+          git config --global user.name "${USERNAME}"
+          git config --global user.email "${EMAIL}"
           git push origin head
           git push --origin tags
       - name: Create release
@@ -42,5 +48,3 @@ jobs:
         run: yarn build
       - name: publish
         run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
