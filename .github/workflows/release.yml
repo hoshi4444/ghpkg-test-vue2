@@ -38,7 +38,7 @@ jobs:
       - name: Version Up
         run: |
           yarn version ${{ inputs.version }}
-          git push origin head
+          git push origin HEAD
           git push --origin tags
       - name: Create release
         run: |
