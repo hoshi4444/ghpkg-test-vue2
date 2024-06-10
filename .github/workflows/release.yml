@@ -44,6 +44,8 @@ jobs:
         run: |
           version="$(git describe --tags --abbrev=0)"
           gh release create "${version}" --title "${version}" --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
         run: yarn install
       - name: build
