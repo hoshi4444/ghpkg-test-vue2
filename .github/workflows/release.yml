@@ -42,7 +42,7 @@ jobs:
           git push origin --tags
       - name: Create release
         run: |
-          version="$(git describe --tags --addrev=0)"
+          version="$(git describe --tags --abbrev=0)"
           gh create release "${version}" --title "${version}" --generate-token
       - name: Install
         run: yarn install
