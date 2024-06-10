@@ -28,7 +28,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@hoshi4444'
       - name: Version Up
-        run:
+        run: |
           yarn version ${{ inputs.version }}
           git push origin head
           git push --origin tags
