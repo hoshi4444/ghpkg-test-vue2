@@ -21,6 +21,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set Git Config
+        run:
+          git config --global user.name "${USERNAME}"
+          git config --global user.email "${EMAIL}"
+        env:
+          USERNAME: github-actions[bot]
+          EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: setup
         uses: actions/setup-node@v4
         with:
@@ -32,8 +40,6 @@ jobs:
           yarn version ${{ inputs.version }}
           git push origin head
           git push --origin tags
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create release
         run: |
           version="$(git describe --tags --addrev=0)"
