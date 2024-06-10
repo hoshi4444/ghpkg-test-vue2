@@ -43,7 +43,7 @@ jobs:
       - name: Create release
         run: |
           version="$(git describe --tags --abbrev=0)"
-          gh create release "${version}" --title "${version}" --generate-token
+          gh release create "${version}" --title "${version}" --generate-token
       - name: Install
         run: yarn install
       - name: build
