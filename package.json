@@ -1,6 +1,6 @@
 {
   "name": "@hoshi4444/ghpkg-test",
-  "version": "0.1.4-5",
+  "version": "0.1.4-6",
   "type": "module",
   "scripts": {
     "dev": "vite",
